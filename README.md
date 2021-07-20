@@ -7,14 +7,12 @@
 | nickname              | string  | null: false |
 | email                 | string  | null: false |
 | encrypted_password    | string  | null: false |
-| password_confirmation | string  | null: false |
 | first_name            | string  | null: false |
 | last_name             | string  | null: false |
 | first_name_kana       | string  | null: false |
 | last_name_kana        | string  | null: false |
-| birth_year            | integer | null: false |
-| birth_month           | integer | null: false |
-| birth_day             | integer | null: false |
+| birth_date            | integer | null: false |
+
 
 ### Association
 
@@ -24,17 +22,17 @@
 
 ## Productsテーブル
 
-| Column          | Type    | Options                        |
-| --------------- | ------- | ------------------------------ |
-| name            | string  | null: false                    |
-| description     | text    | null: false                    |
-| category        | string  | null: false                    |
-| status          | string  | null: false                    |
-| shipping_bearer | string  | null: false                    |
-| prefecture      | string  | null: false                    |
-| delivery_days   | string  | null: false                    |
-| price           | integer | null: false                    |
-| user_id         | integer | null: false, foreign_key: true |
+| Column             | Type    | Options                        |
+| ------------------ | ------- | ------------------------------ |
+| name               | string  | null: false                    |
+| description        | text    | null: false                    |
+| category_id        | integer | null: false                    |
+| status_id          | integer | null: false                    |
+| shipping_bearer_id | integer | null: false                    |
+| prefecture_id      | integer | null: false                    |
+| delivery_days_id   | integer | null: false                    |
+| price              | integer | null: false                    |
+| user_id            | integer | null: false, foreign_key: true |
 
 ### Association
 
@@ -44,10 +42,11 @@
 
 ## Purchasesテーブル
 
-| Column  | Type    | Options                        |
-| ------- | ------- | ------------------------------ |
-| user_id | integer | null: false, foreign_key: true |
-| tel     | integer | null: false                    |
+| Column     | Type    | Options                        |
+| ---------- | ------- | ------------------------------ |
+| user_id    | integer | null: false, foreign_key: true |
+| tel        | string  | null: false                    |
+| product_id | integer | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -57,13 +56,13 @@
 
 ## Mailingsテーブル
 
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| postal_code | integer | null: false |
-| prefecture  | string  | null: false |
-| city        | string  | null: false |
-| address     | string  | null: false |
-| building    | string  | null: false |
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| postal_code   | string  | null: false |
+| prefecture_id | integer | null: false |
+| city          | string  | null: false |
+| address       | string  | null: false |
+| building      | string  | null: false |
 
 ### Associationテーブル
 
