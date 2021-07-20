@@ -6,15 +6,15 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ユーザー新規登録' do
-    content '新規登録できる時' do
+    context '新規登録できる時' do
       it 'すべての項目が想定通り入力されている場合登録できる' do
-
+       
       end
       it 'パスワードが6文字以上だと登録できる' do
 
       end
     end
-    content '新規登録できない時' do
+    context '新規登録できない時' do
       it 'ニックネームがないと登録できない' do
 
       end
