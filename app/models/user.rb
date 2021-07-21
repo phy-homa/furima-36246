@@ -8,7 +8,7 @@ class User < ApplicationRecord
     u.validates :nickname
     u.validates :birth_date
   end
-  with_options presence:true, format:{ with: /\A[ぁ-んァ-ン一-龥]/ } do |u|
+  with_options presence:true, format:{ with: format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/}} do |u|
     u.validates :first_name
     u.validates :last_name
   end
