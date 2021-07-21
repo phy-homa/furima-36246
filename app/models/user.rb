@@ -12,7 +12,7 @@ class User < ApplicationRecord
     u.validates :first_name
     u.validates :last_name
   end
-  with_options presence: true, format:{ with: /\A[ァ-ヶー－]+\z/ } do |u|
+  with_options presence: true, format:{ with: format:/\A[ァ-ヶー－]+\z/ } do |u|
     u.validates :first_name_kana
     u.validates :last_name_kana
   end
