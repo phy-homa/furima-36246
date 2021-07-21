@@ -16,5 +16,6 @@ class Item < ApplicationRecord
   belongs_to :item
   belongs_to :category
   belongs_to :status
+  belongs_to :shipping_bearer
 
 end
