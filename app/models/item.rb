@@ -18,5 +18,6 @@ class Item < ApplicationRecord
   belongs_to :status
   belongs_to :shipping_bearer
   belongs_to :Prefecture
+  belongs_to :delivery_days
 
 end
