@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   with_options presence:true do |u|
     u.validates :name
     u.validates :description
-    u.validates :price, numericality{ in: 300..9999999}
+    u.validates :price, numericality:{ in: 300..9999999}
   end
   with_options numericality: {other_than:1, message:"can't be blank"} do |u|
     u.validates :category_id
@@ -13,7 +13,8 @@ class Item < ApplicationRecord
     u.validates :delivery_days_id
   end
 
-  belongs_to :item
+  belongs_to :user
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :status
   belongs_to :shipping_bearer
