@@ -23,7 +23,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :status
   belongs_to :shipping_bearer
-  belongs_to :Prefecture
+  belongs_to :prefecture
   belongs_to :delivery_days
   has_one_attached :image
 
