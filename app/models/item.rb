@@ -18,7 +18,8 @@ class Item < ApplicationRecord
   end
 
   belongs_to :user
-  
+  has_one :order
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :status
@@ -26,5 +27,4 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :delivery_days
   has_one_attached :image
-
 end
