@@ -4,7 +4,6 @@ RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
   end
-  #bundle exec rspec spec/models/item_spec.rb
 
   describe '商品出品機能'do
     context '出品ができる時' do

@@ -4,7 +4,6 @@ RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
   end
-  #bundle exec rspec spec/models/user_spec.rb
 
   describe 'ユーザー新規登録' do
     context 'ユーザー登録できる時' do

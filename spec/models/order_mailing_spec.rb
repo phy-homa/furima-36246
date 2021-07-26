@@ -7,7 +7,6 @@ RSpec.describe OrderMailing, type: :model do
     @order_mailing = FactoryBot.build(:order_mailing, user_id: user.id, item_id: item.id)
     sleep(1)
   end
-  #bundle exec rspec spec/models/order_mailing_spec.rb
 
   describe '商品購入機能' do
     context '商品購入できる時' do
