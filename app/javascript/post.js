@@ -8,8 +8,8 @@ function fee () {
     //販売利益
     const salesProfit = itemPrice.value - calculationFee;
     const profit = document.getElementById("profit");
-    profit.innerHTML = salesProfit
+    profit.innerHTML = salesProfit;
   });
 };
 
-window.addEventListener('load', fee)
+window.addEventListener('load', fee);
