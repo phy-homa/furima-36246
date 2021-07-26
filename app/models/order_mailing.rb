@@ -3,11 +3,11 @@ class OrderMailing
   attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :address, :building, :tel, :order_id, :token
 
   with_options presence:true do |u|
-    u.validates :postal_code, format:{with: "/\A\d{3}[-]\d{4}\z/}"}
+    u.validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/}
     u.validates :prefecture_id
     u.validates :city
     u.validates :address
-    u.validates :tel,format:{with: "/\A0[0-9]{9,10}\z/"}
+    u.validates :tel,format: { with: /\A0[0-9]{9,10}\z/}
     u.validates :token
   end
 
