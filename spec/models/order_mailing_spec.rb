@@ -76,17 +76,17 @@ RSpec.describe OrderMailing, type: :model do
         expect(@order_mailing.errors.full_messages).to include("Tel is invalid")
       end
       it '電話番号が数字でない（文字）だと商品購入できない' do
-        @order_mailing.tel = "ｱｲｳｴｵｶｷｸｹｺ"
+        @order_mailing.tel = "abcdefghij"
+        @order_mailing.valid?
+        expect(@order_mailing.errors.full_messages).to include("Tel is invalid")
+      end
+      it '電話番号は英数混合だと商品購入できない' do
+        @order_mailing.tel = "abcde12345"
         @order_mailing.valid?
         expect(@order_mailing.errors.full_messages).to include("Tel is invalid")
       end
       it '電話番号ハイフンがあると商品購入できない' do
         @order_mailing.tel = "012-345-6789"
-        @order_mailing.valid?
-        expect(@order_mailing.errors.full_messages).to include("Tel is invalid")
-      end
-      it '電話番号は0から始まる数字でないと商品購入できない' do
-        @order_mailing.tel = "1234567890"
         @order_mailing.valid?
         expect(@order_mailing.errors.full_messages).to include("Tel is invalid")
       end
@@ -104,6 +104,16 @@ RSpec.describe OrderMailing, type: :model do
         @order_mailing.token = ""
         @order_mailing.valid?
         expect(@order_mailing.errors.full_messages).to include("Token can't be blank")
+      end
+      it 'user_idが空だと商品購入できない' do
+        @order_mailing.user_id = ""
+        @order_mailing.valid?
+        expect(@order_mailing.errors.full_messages).to include("User can't be blank")
+      end
+      it 'item_idが空だと商品購入できない' do
+        @order_mailing.item_id = ""
+        @order_mailing.valid?
+        expect(@order_mailing.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
